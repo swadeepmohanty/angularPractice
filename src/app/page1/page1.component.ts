@@ -9,7 +9,13 @@ export class Page1Component implements OnInit {
 
   constructor() { }
 
+  pageName = 'Page One';
+
   ngOnInit() {
+    setTimeout( () => { this.pageName = 'First Page' } , 5000);
   }
 
+  onButtonClick() {
+    alert('Hello - the date is ' + new Date());
+  }
 }

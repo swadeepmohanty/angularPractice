@@ -1,4 +1,5 @@
-<app-header></app-header>
-<app-page1></app-page1>
-<app-page2></app-page2>
-<app-footer></app-footer>
+<app-header (pageChangeEvent)="incrementHitCounter($event)" #headerComponent></app-header>
+<app-page1 [hidden] = "headerComponent.pageRequested !== 1"></app-page1>
+<app-page2 [hidden] = "currentPage !== 2" #page2></app-page2>
+<app-footer #footer [lastAccessed]='startTime'></app-footer>
+<button (click)="updateLastAccess()">Update Last Access</button>
